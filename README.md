@@ -10,10 +10,14 @@ Add this line to your application's Gemfile:
 
 ## Usage
 
+Run rails generator
+
+    bundle exec rails g fb_account:install
+
 Set Facebook app configuration
     
     # config/initializers/fb_account.rb
-    FbAccount::Config.configure do |config|
+    FbAccount::Config.setup do |config|
       config.app_id = "app_id"
       config.app_secret = "app_secret"
     end
@@ -24,7 +28,7 @@ Include FbAccount helper to application controller
     class ApplicationController < ActionController::Base
       include FbAccount::Helper
 
-Include FbAccount model to your account model
+Include FbAccount model to your account model (not needed if use generator)
 
     # app/models/account.rb
     class Account < ActiveRecord::Base

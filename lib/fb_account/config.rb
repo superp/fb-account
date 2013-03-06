@@ -3,7 +3,7 @@ module FbAccount
     class << self
       attr_accessor :app_id, :app_secret
 
-      def configure
+      def setup
         yield(self)
       end
     end
