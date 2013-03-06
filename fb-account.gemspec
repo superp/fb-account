@@ -8,12 +8,15 @@ Gem::Specification.new do |gem|
   gem.version       = FbAccount::VERSION
   gem.authors       = ["superp"]
   gem.email         = ["superp1987@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Facebook rails helper for accounts}
+  gem.summary       = %q{Useful for facebook tabs and canvases}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  #gem.add_runtime_dependency("rails", "~> 3.2.0")
+  gem.add_runtime_dependency("fb_graph")
 end

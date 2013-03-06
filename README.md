@@ -1,6 +1,6 @@
-# Fb::Account
+# FbAccount
 
-TODO: Write a gem description
+Facebook rails helper for accounts. Useful for facebook tabs and canvases.
 
 ## Installation
 
@@ -8,17 +8,27 @@ Add this line to your application's Gemfile:
 
     gem 'fb-account'
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install fb-account
-
 ## Usage
 
-TODO: Write usage instructions here
+Set Facebook app configuration
+    
+    # config/initializers/fb_account.rb
+    FbAccount::Config.configure do |config|
+      config.app_id = "app_id"
+      config.app_secret = "app_secret"
+    end
+
+Include FbAccount helper to application controller
+    
+    # app/controllers/application_controller.rb
+    class ApplicationController < ActionController::Base
+      include FbAccount::Helper
+
+Include FbAccount model to your account model
+
+    # app/models/account.rb
+    class Account < ActiveRecord::Base
+      include FbAccount::Model
 
 ## Contributing
 
